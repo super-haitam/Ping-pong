@@ -66,8 +66,10 @@ class Ball:
             if not 0 <= self.rect.centery <= HEIGHT:
                 self.bounce('y')
 
-            # Bounce when collision with either pad1 or pad2
-            if self.is_collided(self.pad1) or self.is_collided(self.pad2):
+            # Bounce when collision with either pad1 or pad2, Changes not to bounce more than once in the same paddle made in 13/5/2022
+            if self.is_collided(self.pad1) and self.speed_x > 0:
+                self.bounce('x')
+            elif self.is_collided(self.pad2) and self.speed_x < 0:
                 self.bounce('x')
 
             # Check when the ball goes off right and left borders, to count the points and make countdown == True

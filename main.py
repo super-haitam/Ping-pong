@@ -46,7 +46,7 @@ unlimited_mode_rect.x, unlimited_mode_rect.y = WIDTH*(5/6)-WIDTH/5+5, HEIGHT*(2/
 limited_mode_rect = limited_mode_img.get_rect()
 limited_mode_rect.x, limited_mode_rect.y = WIDTH/6+5, HEIGHT*(2/3)+5
 
-# Control touches images
+# Control touches images, Changes made in 13/5/2022
 player_ctrl_help_img = get_pygame_img(CreateImage(PSEUDO_WHITE, {"Control Player1": ["up", "down"]}))
 robot_ctrl_help_img = get_pygame_img(CreateImage(PSEUDO_WHITE, {"Control Player2": ['w', 's']}))
 w = WIDTH / 8
@@ -273,7 +273,7 @@ while run:
         # Handle player and opponent movement
         player.handle_movement("up", "down")
         if bool_player:
-            opponent.handle_movement("w", "s")
+            opponent.handle_movement('w', 's')
             opponent.vel = player.vel
         elif bool_pc:
             # Here will be the code to handle pc's movement, when the ball moves
